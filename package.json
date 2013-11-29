@@ -1,0 +1,27 @@
+{
+  "name": "wix-tastyhub-app",
+  "description": "TastyHub widget for Wix App Market",
+  "version": "0.1.0",
+  "author": {
+    "name": "Iaroslav Sergieiev",
+    "email": "noomorph@gmail.com",
+    "idea_by": "Sergey Feldman, Irina Mamedova, Alexander Fedoruk, Iaroslav Sergieiev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/noomorph/wix-tastyhub-app"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "devDependencies": {
+    "grunt-contrib-jasmine": "~0.4.0",
+    "grunt": "~0.4.0",
+    "grunt-contrib-jshint": "~0.2.0",
+    "grunt-template-jasmine-requirejs": "~0.1.2",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-contrib-coffee": "~0.7.0",
+    "grunt-contrib-clean": "~0.5.0"
+  },
+  "dependencies": {}
+}
