@@ -6,12 +6,17 @@ module.exports = function(grunt) {
     jasmine: {
       requirejs: {
         src: 'src/**/*.js',
-          options: {
-            specs: 'spec/**/*.js',
-              template: require('grunt-template-jasmine-requirejs'),
-              templateOptions: {
-              requireConfig: {
-              baseUrl: ''
+        options: {
+          specs: ['spec/**/*.js', '!spec/helper.js'],
+          template: require('grunt-template-jasmine-requirejs'),
+          templateOptions: {
+            requireConfig: {
+              baseUrl: '',
+              paths: {
+                "spec": "spec/compiled/",
+                "style": "src/style/",
+                "knockout": "bower_components/knockout/build/output/knockout-latest.debug"
+              }
             }
           }
         }
@@ -34,12 +39,12 @@ module.exports = function(grunt) {
         expand: true,
         flatten: true,
         cwd: 'spec/',
-        src: ['*.coffee'],
-        dest: 'spec/',
+        src: ['**/*.coffee'],
+        dest: 'spec/compiled/',
         ext: '.js'
       }
     },
-    clean: ["spec/**/*.js", "spec/**/*.js.map"],
+    clean: ["spec/compiled"],
     watch: {
       js: {
         files: ['src/**/*.js', 'spec/**/*.coffee'],

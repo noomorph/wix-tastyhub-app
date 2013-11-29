@@ -1,0 +1,27 @@
+{
+  "name": "wix-tastyhub-app",
+  "version": "0.1.0",
+  "homepage": "https://github.com/noomorph/wix-tastyhub-app",
+  "description": "Step-by-step recipe widget for Wix App Market",
+  "main": "Gruntfile.js",
+  "keywords": [
+    "wix",
+    "widget",
+    "wizard"
+  ],
+  "authors": [
+    "Iaroslav Sergieiev"
+  ],
+  "license": "GPLv2",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "knockout": "~3.0.0"
+  }
+}

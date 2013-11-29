@@ -3,7 +3,7 @@ define(["src/tasty_style"], function (TastyStyle) {
 
   function TastyWidget(config) {
       config = config || {};
-      this.settings = new TastyStyle(config.style);
+      this.style = new TastyStyle(config.style);
   }
 
   return TastyWidget;
