@@ -1,4 +1,4 @@
-define ['src/tasty_style', 'style/metric', 'style/border'], (TastyStyle, Metric, Border) ->
+define ['src/tasty_style', 'src/tasty_navigation', 'style/metric', 'style/border'], (TastyStyle, TastyNavigation, Metric, Border) ->
   describe 'TastyStyle', ->
     describe "#new", ->
       subject = -> new TastyStyle()
@@ -11,3 +11,6 @@ define ['src/tasty_style', 'style/metric', 'style/border'], (TastyStyle, Metric,
 
       it "should have border", ->
         expect(subject().border).toBeInstanceOf Border
+
+      it "should have navigation settings", ->
+        expect(subject().navigation).toBeInstanceOf TastyNavigation

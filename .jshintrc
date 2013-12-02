@@ -16,7 +16,7 @@
     "eqnull": true,
     "strict": false,
     "browser": true,
-    "maxparams": 4,
+    "maxparams": 5,
     "maxdepth": 3,
     "maxstatements": 60,
     "maxlen": 100,

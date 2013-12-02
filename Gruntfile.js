@@ -34,7 +34,7 @@ module.exports = function(grunt) {
     coffee: {
       spec: {
         options: {
-          sourceMap: true
+          sourceMap: false
         },
         expand: true,
         flatten: true,
