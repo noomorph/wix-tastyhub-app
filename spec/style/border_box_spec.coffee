@@ -1,6 +1,4 @@
-define [
-  "style/border", "style/border_box"
-], (Border, BorderBox) ->
+define ["style/border", "style/border_box"], (Border, BorderBox) ->
 
   describe "BorderBox", ->
     beforeEach ->
