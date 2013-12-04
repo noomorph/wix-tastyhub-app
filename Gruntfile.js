@@ -13,8 +13,9 @@ module.exports = function(grunt) {
             requireConfig: {
               baseUrl: '',
               paths: {
+                "js": "src/js/",
                 "spec": "spec/compiled/",
-                "style": "src/style/",
+                "style": "src/js/style/",
                 "knockout": "bower_components/knockout/build/output/knockout-latest.debug"
               }
             }

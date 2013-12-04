@@ -1,4 +1,4 @@
-define(["src/tasty_style"], function (TastyStyle) {
+define(["js/tasty_style"], function (TastyStyle) {
   'use strict';
 
   function TastyWidget(config) {

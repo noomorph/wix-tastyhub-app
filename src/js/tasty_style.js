@@ -1,6 +1,6 @@
 define([
   "knockout",
-  "src/tasty_navigation",
+  "js/tasty_navigation",
   "style/metric",
   "style/border"
 ], function (ko, TastyNavigation, Metric, Border) {
