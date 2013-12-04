@@ -23,6 +23,7 @@
   ],
   "dependencies": {
     "knockout": "~3.0.0",
-    "requirejs": "~2.1.9"
+    "requirejs": "~2.1.9",
+    "lodash": "~2.4.1"
   }
 }

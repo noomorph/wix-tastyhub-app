@@ -11,6 +11,7 @@ require.config({
   },
   map: {
     "*": {
+      "lodash": "../bower_components/lodash/dist/lodash.js",
       "knockout": "../bower_components/knockout/build/output/knockout-latest.js",
       "ko": "../bower_components/knockout/build/output/knockout-latest.js"
     }
@@ -23,6 +24,7 @@ require.config({
 require.config({
   map: {
     "*": {
+      "lodash": "../bower_components/lodash/dist/lodash.min.js",
       "knockout": "../bower_components/knockout/build/output/knockout-latest.debug.js",
       "ko": "../bower_components/knockout/build/output/knockout-latest.debug.js"
     }

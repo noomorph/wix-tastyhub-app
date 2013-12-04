@@ -1,9 +1,10 @@
 define(["knockout", "style/metric", "style/box"], function (ko, Metric, Box) {
-  function MetricBox (all, side, bottom, left) {
+  function MetricBox (property, all, side, bottom, left) {
     Box.call(this, Metric, all, side, bottom, left);
 
     this.$ = ko.computed(function () {
-      var left = this.left.$(),
+      var wrapper, result,
+          left = this.left.$(),
           right = this.right.$(),
           top = this.top.$(),
           bottom = this.bottom.$(),
@@ -19,7 +20,15 @@ define(["knockout", "style/metric", "style/box"], function (ko, Metric, Box) {
         }
       }
 
-      return args.join(' ');
+      result = args.join(' ');
+      if (!property) {
+        return result;
+      }
+
+      wrapper = {};
+      wrapper[property] = result;
+      return wrapper;
+
     }, this);
   }
 

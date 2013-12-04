@@ -2,5 +2,7 @@ _SpecRunner.html
 node_modules
 bower_components
 .grunt
+.sass-cache
+src/css
 spec/**/*.js
 spec/**/*.js.map

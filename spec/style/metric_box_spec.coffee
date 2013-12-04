@@ -1,7 +1,7 @@
 define ['style/box', 'style/metric', 'style/metric_box'], (Box, Metric, MetricBox) ->
   describe 'MetricBox', ->
-    subject = (all, side, bottom, left) ->
-      new MetricBox(all, side, bottom, left)
+    subject = (prop, all, side, bottom, left) ->
+      new MetricBox(prop, all, side, bottom, left)
 
     beforeEach ->
       @addMatchers
@@ -17,7 +17,7 @@ define ['style/box', 'style/metric', 'style/metric_box'], (Box, Metric, MetricBo
       bottom = metric(2, 'em')
       left = metric(10, '%')
 
-      beforeEach -> @box = subject(top, right, bottom, left)
+      beforeEach -> @box = subject(null, top, right, bottom, left)
 
       it "should init: top = 1st arg", ->
         expect(@box.top).toBeMetric(top.value, top.unit)
@@ -28,28 +28,32 @@ define ['style/box', 'style/metric', 'style/metric_box'], (Box, Metric, MetricBo
       it "should init: left = 4th arg", ->
         expect(@box.left).toBeMetric(left.value, left.unit)
 
-    describe "metric_box.$", ->
-      beforeEach -> @box = subject(5)
+    describe "metric_box(null, ...).$", ->
+      it "should return a string", ->
+        expect(subject(null, 5).$()).toBe "5px"
+
+    describe "metric_box('prop', ... ).$", ->
+      beforeEach -> @box = subject('prop', 5)
 
       describe 'when all sides are equal', ->
         it "should have $ = '<all>'", ->
-          expect(@box.$()).toBe "5px"
+          expect(@box.$()).toEqual { prop: "5px" }
 
       describe 'when left == right and bottom == top == 0', ->
         beforeEach ->
           @box.top.value(0)
           @box.bottom.value(0)
         it "should have $ = '<top/bottom> <left/right>'", ->
-          expect(@box.$()).toBe "0 5px"
+          expect(@box.$()).toEqual { prop: "0 5px" }
 
       describe 'when left == right but bottom != top', ->
         beforeEach ->
           @box.bottom.value(0)
         it "should have $ = '<top> <side> <bottom>'", ->
-          expect(@box.$()).toBe "5px 5px 0"
+          expect(@box.$()).toEqual { prop: "5px 5px 0" }
 
       describe 'when right != left', ->
         beforeEach ->
           @box.left.unit('%')
         it "should have $ = '<top> <right> <bottom> <left>'", ->
-          expect(@box.$()).toBe "5px 5px 5px 5%"
+          expect(@box.$()).toEqual { prop: "5px 5px 5px 5%" }

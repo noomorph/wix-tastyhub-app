@@ -17,6 +17,9 @@ define ["knockout"], (ko) ->
         else
           @actual() == value
 
-      toBeInstanceOf: (klass) ->
+      toBeInstanceOf: (klass, arg) ->
         @actual? and
         @actual.constructor == klass
+
+      toEqualJSON: (expected) ->
+        JSON.stringify(@actual) == JSON.stringify(expected)

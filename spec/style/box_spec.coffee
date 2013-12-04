@@ -82,3 +82,34 @@ define ['style/box'], (Box) ->
         expect(@box.bottom).toEqual { value: $3 }
       it "should init: left = 4th arg", ->
         expect(@box.left).toEqual { value: $4 }
+
+    describe "constructed with config", ->
+      describe "config missing a property", ->
+        config = { top: 5, bottom: 0, right: 2 }
+        beforeEach -> @box = subject(config)
+
+        it "should init: top = config", ->
+          expect(@box.top).toEqual { value: config }
+        it "should init: right = config", ->
+          expect(@box.right).toEqual { value: config }
+        it "should init: bottom = config", ->
+          expect(@box.bottom).toEqual { value: config }
+        it "should init: left = config", ->
+          expect(@box.left).toEqual { value: config }
+
+      describe "valid config", ->
+        config =
+          top: 5
+          bottom: {}
+          left: 'none'
+          right: []
+        beforeEach -> @box = subject(config)
+
+        it "should init: top = config.top", ->
+          expect(@box.top).toEqual { value: config.top }
+        it "should init: right = config.right", ->
+          expect(@box.right).toEqual { value: config.right }
+        it "should init: bottom = config.bottom", ->
+          expect(@box.bottom).toEqual { value: config.bottom }
+        it "should init: left = config.left", ->
+          expect(@box.left).toEqual { value: config.left }
