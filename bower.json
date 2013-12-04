@@ -22,6 +22,7 @@
     "tests"
   ],
   "dependencies": {
-    "knockout": "~3.0.0"
+    "knockout": "~3.0.0",
+    "requirejs": "~2.1.9"
   }
 }

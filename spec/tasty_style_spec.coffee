@@ -1,4 +1,4 @@
-define ['src/tasty_style', 'src/tasty_navigation', 'style/metric', 'style/border'], (TastyStyle, TastyNavigation, Metric, Border) ->
+define ['js/tasty_style', 'js/tasty_navigation', 'style/metric', 'style/border'], (TastyStyle, TastyNavigation, Metric, Border) ->
   describe 'TastyStyle', ->
     describe "#new", ->
       subject = -> new TastyStyle()

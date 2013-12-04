@@ -5,7 +5,7 @@ module.exports = function(grunt) {
   grunt.initConfig({
     jasmine: {
       requirejs: {
-        src: 'src/**/*.js',
+        src: ['src/js/**/*.js'],
         options: {
           specs: ['spec/**/*.js', '!spec/helper.js'],
           template: require('grunt-template-jasmine-requirejs'),
