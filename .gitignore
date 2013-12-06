@@ -1,6 +1,7 @@
 _SpecRunner.html
 node_modules
 bower_components
+.DS_Store
 .grunt
 .sass-cache
 src/css

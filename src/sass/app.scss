@@ -1,2 +1,8 @@
 @import "compass/reset";
+*, :before, :after {
+  box-sizing: border-box;
+}
 
+@import 'mixins/clearfix';
+@import 'widget';
+@import 'header';
