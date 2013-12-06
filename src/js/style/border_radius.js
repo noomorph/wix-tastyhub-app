@@ -1,6 +1,6 @@
 define(["knockout", "style/metric_box"], function (ko, MetricBox) {
-  function BorderRadius (top_left, top_right, bottom_right, bottom_left) {
-    MetricBox.call(this, 'borderRadius', top_left, top_right, bottom_right, bottom_left);
+  function BorderRadius(topLeft, topRight, bottomRight, bottomLeft) {
+    MetricBox.call(this, "borderRadius", topLeft, topRight, bottomRight, bottomLeft);
   }
   return BorderRadius;
 });

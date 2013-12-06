@@ -1,6 +1,6 @@
 define([], function () {
-  function TastyNavigation () {
+  function TastyNavigation() {
   }
-  
+
   return TastyNavigation;
 });

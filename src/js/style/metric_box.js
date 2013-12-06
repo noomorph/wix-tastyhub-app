@@ -1,5 +1,6 @@
+/* jshint maxdepth: 3 */
 define(["knockout", "style/metric", "style/box"], function (ko, Metric, Box) {
-  function MetricBox (property, all, side, bottom, left) {
+  function MetricBox(property, all, side, bottom, left) {
     Box.call(this, Metric, all, side, bottom, left);
 
     this.$ = ko.computed(function () {
@@ -20,7 +21,7 @@ define(["knockout", "style/metric", "style/box"], function (ko, Metric, Box) {
         }
       }
 
-      result = args.join(' ');
+      result = args.join(" ");
       if (!property) {
         return result;
       }

@@ -7,9 +7,9 @@ define([
   "style/border_radius",
   "style/border_box"
 ], function (ko, _, TastyNavigation, Metric, BorderRadius, BorderBox) {
-  'use strict';
+  "use strict";
 
-  function TastyStyle (config) {
+  function TastyStyle(config) {
     config = config || {};
     this.width = new Metric(config.width);
     this.height = new Metric(config.height);

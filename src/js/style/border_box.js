@@ -1,5 +1,5 @@
 define(["knockout", "style/border", "style/box"], function (ko, Border, Box) {
-  function BorderBox (all, side, bottom, left) {
+  function BorderBox(all, side, bottom, left) {
     Box.call(this, Border, all, side, bottom, left);
 
     this.$ = ko.computed(function () {
