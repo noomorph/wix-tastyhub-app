@@ -9,6 +9,14 @@ define(["knockout"], function (ko) {
   }
 
   TastyStyle.prototype = {
+    SIDE_MARGINS: {
+      "label": "SIDE_MARGINS",
+      "values": [
+        { "label": "NONE",   value: "none"   },
+        { "label": "NARROW", value: "narrow" },
+        { "label": "WIDE",   value: "wide"   }
+      ]
+    },
     setSideMargins: function (value) {
       return function () {
         this.sideMargins(value);

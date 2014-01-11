@@ -14,6 +14,30 @@
     <style type="text/css">
       label.btn { margin-right: 0; }
     </style>
+
+    <script id="navigation" type="text/html">
+      <ul class="nav nav-tabs" style="margin-bottom: 10px;">
+        <li class="active"><a href="#settings_style">Style</a></li>
+        <li><a href="#settings_recipe">Recipe</a></li>
+      </ul>
+    </script>
+
+    <script id="buttongroup" type="text/html">
+      <label data-bind="l10n: meta.label"></label>
+      <div class="btn-group btn-group-sm"
+           data-toggle="buttons"
+           data-bind="foreach: meta.values">
+
+        <label class="btn btn-default"
+               data-bind="css: { active: $parent.value() === value }, click: function () { $parent.value(value); }">
+               
+          <input type="radio">
+          <span data-bind="l10n: label"></span>
+        </label>
+
+      </div>
+    </script>
+
 </head>
 <body>
   <div class="container">
@@ -24,26 +48,11 @@
       </h4>
     </header>
 
-    <ul class="nav nav-tabs" style="margin-bottom: 10px;">
-      <li class="active"><a href="#">Style</a></li>
-      <li><a href="#">Recipe</a></li>
-    </ul>
+    <div data-bind="template: 'navigation'"></div>
 
-    <form role="form" data-bind="with: style">
-      <div class="form-group">
-        <label>Side margins:</label>
-        <div class="btn-group btn-group-sm" data-toggle="buttons">
-          <label class="btn btn-default" data-bind="css: { active: sideMargins() === 'none' }, click: setSideMargins('none')">
-            <input type="radio" name="sideMargins">None
-          </label>
-          <label class="btn btn-default" data-bind="css: { active: sideMargins() === 'narrow' }, click: setSideMargins('narrow')">
-            <input type="radio" name="sideMargins">Narrow
-          </label>
-          <label class="btn btn-default" data-bind="css: { active: sideMargins() === 'wide' }, click: setSideMargins('wide')">
-            <input type="radio" name="sideMargins">Wide
-          </label>
-        </div>
-      </div>
+    <form id="settings_style" role="form" data-bind="with: style">
+      <div class="form-group" data-bind="template: { name: 'buttongroup', data: { meta: SIDE_MARGINS, value: sideMargins } }"></div>
+
       <div class="form-group">
         <label>Media size:</label>
         <div class="btn-group btn-group-sm" data-toggle="buttons">
@@ -92,6 +101,9 @@
         </div>
       </div>
 
+      <form id="settings_recipe" role="form">
+      </form>
+
       <pre data-bind="text: JSON" style="width: 100%">
       sdfakjhksadjfhlkjdsafljkad
       </pre>
@@ -102,7 +114,7 @@
   <!--script src="//zeptojs.com/zepto.min.js"></script-->
   <script src="/bower_components/jquery/jquery.min.js"></script>
   <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-  <script data-main="config" src="../bower_components/requirejs/require.js"></script>
+  <script data-main="config" src="/bower_components/requirejs/require.js"></script>
 
   <script id="font-settings-template" type="script/x-template">
     <form role="form">
