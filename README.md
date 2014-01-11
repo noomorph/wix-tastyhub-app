@@ -1,6 +1,6 @@
 # TastyHub widget for Wix App Market [![Build Status](https://travis-ci.org/noomorph/wix-tastyhub-app.png)](https://travis-ci.org/noomorph/wix-tastyhub-app)
 
-Licensed under GPLv2 [LICENSE].
+Licensed under MIT.
 
 ## Description
 
