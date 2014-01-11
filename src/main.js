@@ -12,4 +12,9 @@ define(["knockout", "js/tasty_widget"], function (ko, TastyWidget) {
     }
   });
   ko.applyBindings(window.widget);
+
+  setInterval(function () {
+    document.querySelector("pre").innerText = ko.toJSON(widget.style);
+  }, 500);
+
 });

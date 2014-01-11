@@ -49,6 +49,10 @@ module.exports = function (grunt) {
     },
     clean: ["spec/compiled"],
     watch: {
+//      css: {
+//        files: ["src/sass/**/*.scss"],
+//        tasks: "sass"
+//      },  
       js: {
         files: ["src/**/*.js", "spec/**/*.coffee"],
         tasks: "test"
